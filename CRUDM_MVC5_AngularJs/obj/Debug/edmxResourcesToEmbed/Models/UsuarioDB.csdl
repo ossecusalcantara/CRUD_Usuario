@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UsuarioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nm_usuario" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="cpf" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="telefone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="logradouro" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="bairro" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="cidade" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="estado" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+    <Property Name="numero" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="UsuarioEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="usuarios" EntityType="Self.usuario" />
+  </EntityContainer>
+</Schema>

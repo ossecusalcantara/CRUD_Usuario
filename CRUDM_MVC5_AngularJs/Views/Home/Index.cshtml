@@ -1,0 +1,98 @@
+﻿<div class="container" ng-controller="usuarioCtrl">
+    <div class="panel panel-info">
+        <div class="panel-heading">Lista de Usuarios</div>
+
+        <div type="button" class="btn btn-primary" style="margin: 10px;" data-target="#AdicionarUsuario" data-toggle="modal">
+            <span class="glyphicon glyphicon-plus"></span>
+        </div>
+
+        <table class="table table-bordered">
+            <thead class="" style="background-color: antiquewhite;">
+                <tr>
+                    <th class="text-center">Id Usuario</th>
+                    <th>Usuario</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th class="text-center">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="func in usuarios">
+                    <td class="text-center">{{func.id_usuario}}</td>
+                    <td>{{func.usuario1}}</td>
+                    <td>{{func.nm_usuario}}</td>
+                    <td>{{func.cpf}}</td>
+                    <td>{{func.telefone}}</td>
+                    <td>{{func.email}}</td>
+                    <td class="text-center" style="width: 170px">
+                        <a href="#" class="btn btn-info"><span class="glyphicon glyphicon-pencil"></span></a>
+                        <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    @* INICIO MODAL - ADICIONAR FUNCIONARIO *@
+    <div class="modal" id="AdicionarUsuario" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="text-info">Adicionar Usuário</h3>
+                </div>
+                <div class="modal-body" style="padding-left: 50px;">
+                    <form class="form-horizontal" name="AdiconarNovoUsuarioFrom">
+                        <div class="form-group" style="margin: 10px;">
+                            <input class="form-control" readonly="readonly" name="id_usuario" type="hidden" placeholder="Id Usuario" />
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="usuario" ng-model="usuario1" placeholder="Usuario" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="nm_usuario" ng-model="nm_usuario" placeholder="Nome Completo" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="cpf" ng-model="cpf" placeholder="CPF" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="telefone" ng-model="telefone" placeholder="Telefone" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="email" ng-model="email" placeholder="E-mail" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="logradouro" ng-model="logradouro" placeholder="Endereço" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="bairro" ng-model="bairro" placeholder="Bairro" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="cidade" ng-model="cidade" placeholder="Cidade" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="estado" ng-model="estado" placeholder="Estado" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="number" name="numero" ng-model="numero" placeholder="Nº" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="bntSalvar" data-dismiss="modal" ng-click="adicionarUsuario()">Adicionar</button>
+                    <button class="btn btn-default" id="bntCancelar" data-dismiss="modal" ng-click="limparDados()">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* FIM MODAL - ADICIONAR FUNCIONARIO *@
+
+</div>
+
+@section scripts {
+    <script src="~/App/Usuario/Module.js"></script>
+    <script src="~/App/Usuario/Service.js"></script>
+    <script src="~/App/Usuario/Controller.js"></script>
+}
